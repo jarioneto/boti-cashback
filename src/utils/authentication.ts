@@ -1,4 +1,4 @@
-import { Auth } from '../types';
+import { Auth } from 'types';
 
 const AUTH = 'auth';
 

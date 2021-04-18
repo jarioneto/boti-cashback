@@ -4,7 +4,7 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
 // Utils
-import { hasAuthenticated } from '../../utils/authentication';
+import { hasAuthenticated } from 'utils/authentication';
 
 type Props = {
   component: React.ComponentType;
