@@ -106,6 +106,9 @@ const SignIn: React.FC = () => {
               type="password"
               error={touched.password && !!errors.password}
               helperText={touched.password && errors.password}
+              inputProps={{
+                'data-testid': 'input-password'
+              }}
             />
           </FormGroup>
 
