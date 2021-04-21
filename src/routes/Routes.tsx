@@ -1,15 +1,26 @@
-import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import React, { Suspense } from 'react';
 
-import Home from 'pages/Home';
+// Third party
+import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+
+// Components
+import Loader from 'components/Loader';
+import PrivateRoute from './PrivateRoute';
+
+const Home = React.lazy(() => import('pages/Home'));
+const Orders = React.lazy(() => import('pages/Orders'));
 
 const Routes: React.FC = () => {
   return (
-    <HashRouter>
-      <Switch>
-        <Route path="/" exact component={Home} />
-      </Switch>
-    </HashRouter>
+    <Suspense fallback={<Loader />}>
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <PrivateRoute path="/orders" exact component={Orders} />
+          <Redirect from="*" to="/" />
+        </Switch>
+      </Router>
+    </Suspense>
   );
 };
 

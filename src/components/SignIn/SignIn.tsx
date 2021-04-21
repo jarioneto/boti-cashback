@@ -70,7 +70,7 @@ const SignIn: React.FC = () => {
         history.push('/orders');
       })
       .catch(() => {
-        toast('Ocorreu um erro, tente novamente.', { type: 'error' });
+        toast('E-mail ou senha inválido', { type: 'error' });
       })
       .finally(() => {
         setLoading(false);

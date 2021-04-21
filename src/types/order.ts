@@ -3,8 +3,8 @@ type OrderStatus = 'Aprovado' | 'Reprovado' | 'Em validação';
 export interface Order {
   id: number;
   userId: number;
-  code: number;
-  date: string;
+  code: string;
+  date: number;
   total: number;
   cashbackPercent: number;
   cashbackTotal: number;

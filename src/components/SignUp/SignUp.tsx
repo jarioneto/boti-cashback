@@ -73,7 +73,7 @@ const SignUp: React.FC<Props> = ({ goBack }) => {
 
     createUser(params)
       .then(() => {
-        toast('Usuário cadastraso com sucesso', { type: 'success' });
+        toast('Usuário cadastrado com sucesso', { type: 'success' });
         goBack();
       })
       .catch(() => {
