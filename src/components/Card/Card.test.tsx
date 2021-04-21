@@ -37,8 +37,9 @@ describe('Card component', () => {
   test('Should render order section', () => {
     renderComponent();
 
-    expect(screen.getByText(/compra/i)).toBeInTheDocument();
+    expect(screen.getByText(/código/i)).toBeInTheDocument();
     expect(screen.getByText(/45228799/i)).toBeInTheDocument();
+    expect(screen.getByText(/data/i)).toBeInTheDocument();
     expect(screen.getByText(/18 abril 2021/i)).toBeInTheDocument();
     expect(screen.getByText(/180,20/i)).toBeInTheDocument();
   });

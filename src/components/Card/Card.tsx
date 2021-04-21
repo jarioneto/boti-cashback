@@ -28,27 +28,33 @@ const Card: React.FC<Props> = ({ order }) => {
 
   return (
     <Box className={classes.box}>
-      <div className={`${classes.row} ${classes.status}`}>
+      <div className={classes.row}>
         <CashbackIcon />
-        <Chip label={status} variant="outlined" />
+        <Chip label={status} className={classes.chip} />
+      </div>
+      <div className={`${classes.row} ${classes.details}`}>
+        <Typography variant="inherit">Detalhes da compra</Typography>
       </div>
       <div className={`${classes.row} ${classes.order}`}>
         <div>
           <Typography variant="inherit">{code}</Typography>
-          <Typography variant="inherit">Compra</Typography>
+          <Typography variant="inherit">Código</Typography>
         </div>
         <div>
-          <Chip label={parseCurrency(total)} />
           <Typography variant="inherit">{parseDate(date)}</Typography>
+          <Typography variant="inherit">Data</Typography>
         </div>
+      </div>
+      <div className={`${classes.row} ${classes.total} ${classes.line}`}>
+        <Chip label={parseCurrency(total)} className={classes.chip} />
       </div>
       <div className={`${classes.row} ${classes.cashback}`}>
         <div>
           <Typography variant="inherit">Cashback</Typography>
         </div>
         <div>
-          <Chip label={`${cashbackPercent}%`} variant="outlined" />
-          <Chip label={parseCurrency(cashbackTotal)} variant="outlined" />
+          <Chip label={`${cashbackPercent}%`} className={classes.chip} />
+          <Chip label={parseCurrency(cashbackTotal)} className={classes.chip} />
         </div>
       </div>
     </Box>

@@ -28,57 +28,62 @@ export default makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(3)
+    marginBottom: theme.spacing(2)
   },
-  status: {
-    '& .MuiChip-root': {
-      color: theme.palette.grey[500]
+  status: {},
+  chip: {
+    backgroundColor: theme.palette.grey[200],
+    color: theme.palette.grey[600],
+    fontWeight: 600
+  },
+  details: {
+    marginBottom: 'unset',
+
+    '& > span:first-child': {
+      color: theme.palette.grey[900],
+      fontWeight: 600
     }
   },
+  total: {
+    marginBottom: 'unset'
+  },
   order: {
-    borderBottom: `solid 1px ${theme.palette.grey[200]}`,
-    paddingBottom: theme.spacing(3),
-
-    '& > div:first-child': {
+    '& > div': {
       display: 'flex',
       flexDirection: 'column',
 
       '& > span:first-child': {
-        color: theme.palette.grey[900],
+        color: theme.palette.grey[500],
         fontWeight: 600
       }
     },
+
     '& > div:last-child': {
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'flex-end',
-
-      '& .MuiChip-root': {
-        backgroundColor: theme.palette.grey[200],
-        color: theme.palette.grey[500],
-        fontWeight: 600,
-        marginBottom: theme.spacing(3)
-      }
+      justifyContent: 'flex-end'
     }
+  },
+  line: {
+    borderBottom: `solid 1px ${theme.palette.grey[200]}`,
+    paddingBottom: theme.spacing(3)
   },
   cashback: {
     display: 'flex',
     flexDirection: 'column',
 
+    '& > div > span:first-child': {
+      color: theme.palette.grey[900],
+      fontWeight: 600
+    },
+
     '& > div:last-child': {
       display: 'flex',
-      marginTop: theme.spacing(1),
+      marginTop: theme.spacing(1)
+    },
 
-      '& .MuiChip-root': {
-        color: theme.palette.grey[500],
-        fontWeight: 600,
-        marginRight: theme.spacing(1)
-      },
-
-      '& .MuiChip-root:last-child': {
-        color: theme.palette.grey[900],
-        border: `solid 1px ${theme.palette.grey[900]}`
-      }
+    '& .MuiChip-root': {
+      marginRight: theme.spacing(1)
     }
   }
 }));
