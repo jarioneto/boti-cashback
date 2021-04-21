@@ -27,7 +27,6 @@ const Home: React.FC = () => {
           </div>
         </Grid>
       </Hidden>
-
       <Grid item lg={4} xs={12}>
         <Login />
       </Grid>

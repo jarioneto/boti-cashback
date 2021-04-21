@@ -19,7 +19,6 @@ const Orders: React.FC = () => {
   return (
     <>
       <Header />
-
       <div className={classes.container}>
         <Box className={classes.header}>
           <Box>
@@ -33,7 +32,6 @@ const Orders: React.FC = () => {
         </Box>
         <List />
       </div>
-
       <OrderForm />
     </>
   );
