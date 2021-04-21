@@ -12,11 +12,16 @@ export default makeStyles((theme) => ({
     padding: `${theme.spacing(2)}px ${theme.spacing(3)}px`,
     color: theme.palette.grey[500],
     fontSize: typography.font.extraSmall,
+    maxWidth: 340,
     transition: 'transform 0.8s',
     backfaceVisibility: 'hidden',
 
     '&:hover': {
       transform: 'perspective(1px) scale(1.03)'
+    },
+
+    [theme.breakpoints.up('xl')]: {
+      maxWidth: 370
     }
   },
   row: {

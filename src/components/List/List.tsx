@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+// Material UI
+import Alert from '@material-ui/lab/Alert';
+
 // Components
 import Card from 'components/Card';
 import Loader from 'components/Loader';
@@ -53,18 +56,23 @@ const List: React.FC = () => {
   };
 
   return (
-    <div className={classes.list} data-testid="list">
-      <InfiniteScroll
-        pageStart={0}
-        hasMore={hasMoreOrders}
-        loadMore={getOrders}
-        loader={<Loader key={0} />}
-      >
-        {orders.map((order) => (
-          <Card key={order.id} order={order} />
-        ))}
-      </InfiniteScroll>
-    </div>
+    <>
+      <div className={classes.list} data-testid="list">
+        <InfiniteScroll
+          pageStart={0}
+          hasMore={hasMoreOrders}
+          loadMore={getOrders}
+          loader={<Loader key={0} />}
+        >
+          {orders.map((order) => (
+            <Card key={order.id} order={order} />
+          ))}
+        </InfiniteScroll>
+      </div>
+      {!orders.length && !hasMoreOrders && (
+        <Alert severity="warning">Você ainda não possui compras</Alert>
+      )}
+    </>
   );
 };
 

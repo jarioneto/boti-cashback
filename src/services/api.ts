@@ -8,7 +8,8 @@ import {
   LogoutResponse,
   OrdersRequest,
   User,
-  Order
+  Order,
+  CashbackResponse
 } from 'types';
 
 // Utils
@@ -45,8 +46,8 @@ const fetchOrders = async (data: OrdersRequest): Promise<AxiosResponse<Order[]>>
   return http.get<Order[]>(`/orders?${query}`);
 };
 
-const fetchBalance = async (userId: number): Promise<AxiosResponse<number>> => {
-  return http.get<number>(`/orders?userId=${userId}`);
+const fetchBalance = async (userId: number): Promise<AxiosResponse<CashbackResponse>> => {
+  return http.get<CashbackResponse>(`/cashback?userId=${userId}`);
 };
 
 export { login, logout, createUser, createOrder, fetchOrders, fetchBalance };

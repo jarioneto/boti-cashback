@@ -21,3 +21,7 @@ export interface OrdersRequest {
   page: number;
   limit: number;
 }
+
+export interface CashbackResponse {
+  total: number;
+}
