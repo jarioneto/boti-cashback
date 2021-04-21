@@ -42,7 +42,7 @@ describe('Button component', () => {
     expect(props.onClick).toHaveBeenCalled();
   });
 
-  test('Should execute function on click', () => {
+  test('Should display loader', () => {
     const props = {
       loading: true
     };

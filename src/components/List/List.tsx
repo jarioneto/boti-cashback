@@ -53,7 +53,7 @@ const List: React.FC = () => {
   };
 
   return (
-    <div className={classes.list}>
+    <div className={classes.list} data-testid="list">
       <InfiniteScroll
         pageStart={0}
         hasMore={hasMoreOrders}

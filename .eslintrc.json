@@ -34,7 +34,8 @@
     "react/prop-types": "off",
     "import/order": "off",
     "import/no-extraneous-dependencies": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "jest/no-mocks-import": "off"
   },
   "settings": {
     "import/resolver": {

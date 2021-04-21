@@ -162,7 +162,7 @@ const OrderForm: React.FC = () => {
 
                 <Box className={classes.box}>
                   <Button type="submit" loading={loading}>
-                    Cadastrar
+                    Salvar
                   </Button>
                   <Button variant="outlined" onClick={toggleDrawer}>
                     Cancelar

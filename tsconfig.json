@@ -23,6 +23,7 @@
     "sourceMap": true
   },
   "include": [
-    "src"
+    "src",
+    "__mocks__"
   ]
 }

@@ -53,6 +53,7 @@
     "@types/react-text-mask": "^5.4.7",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "axios-mock-adapter": "^1.19.0",
     "eslint": "^7.24.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^12.3.1",
@@ -66,5 +67,28 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "prettier": "^2.2.1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "setupTests": "<rootDir>/src/setupTests",
+      "^__mocks__(.*)$": "<rootDir>/__mocks__$1"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/assets/**",
+      "!src/types/**",
+      "!src/routes/**",
+      "!src/styles/**",
+      "!src/index.tsx"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 85,
+        "branches": 92,
+        "functions": 80,
+        "lines": 85
+      }
+    }
   }
 }

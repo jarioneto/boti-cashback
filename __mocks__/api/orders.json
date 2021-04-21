@@ -1,0 +1,62 @@
+  [
+    {
+      "id": 10203040,
+      "code": "45228799",
+      "userId": 1,
+      "date": 1618775965632,
+      "total": 180.2,
+      "cashbackPercent": 10,
+      "cashbackTotal": 18.2,
+      "status": "Aprovado"
+    },
+    {
+      "id": 10203041,
+      "code": "45228799",
+      "userId": 1,
+      "date": 1618775965632,
+      "total": 180.2,
+      "cashbackPercent": 10,
+      "cashbackTotal": 18.2,
+      "status": "Aprovado"
+    },
+    {
+      "id": 10203042,
+      "code": "45228799",
+      "userId": 1,
+      "date": 1618775965632,
+      "total": 180.2,
+      "cashbackPercent": 10,
+      "cashbackTotal": 18.2,
+      "status": "Em validação"
+    },
+    {
+      "id": 10203043,
+      "code": "45228799",
+      "userId": 1,
+      "date": 1618775965632,
+      "total": 180.2,
+      "cashbackPercent": 10,
+      "cashbackTotal": 18.2,
+      "status": "Reprovado"
+    },
+    {
+      "id": 10203044,
+      "code": "45228799",
+      "userId": 1,
+      "date": 1618775965632,
+      "total": 180.2,
+      "cashbackPercent": 10,
+      "cashbackTotal": 18.2,
+      "status": "Aprovado"
+    },
+    {
+      "id": 10203045,
+      "code": "45228799",
+      "userId": 1,
+      "date": 1618775965632,
+      "total": 180.2,
+      "cashbackPercent": 10,
+      "cashbackTotal": 18.2,
+      "status": "Aprovado"
+    }
+  ]
