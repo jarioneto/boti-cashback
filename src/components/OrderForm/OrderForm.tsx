@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 //  Material UI
 import Box from '@material-ui/core/Box';
@@ -20,6 +20,9 @@ import * as yup from 'yup';
 
 // Services
 import { createOrder } from 'services/api';
+
+// Context
+import OrderContext from 'contexts/OrderContext';
 
 // Utils
 import toast from 'utils/toast';
@@ -54,6 +57,8 @@ const OrderForm: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [visible, setVisible] = useState<boolean>(false);
 
+  const { addOrders } = useContext(OrderContext.Context);
+
   const initialValues: FormFields = {
     code: '',
     total: '',
@@ -78,7 +83,9 @@ const OrderForm: React.FC = () => {
     setLoading(true);
 
     createOrder(params)
-      .then(() => {
+      .then(({ data }) => {
+        addOrders([data]);
+
         toast('Compra cadastrada com sucesso', { type: 'success' });
         toggleDrawer();
       })

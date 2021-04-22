@@ -14,6 +14,9 @@ import { theme } from 'styles';
 // Services
 import http from 'services/http';
 
+// Context
+import OrderContext from 'contexts/OrderContext';
+
 // Utils
 import toast from 'utils/toast';
 
@@ -32,7 +35,11 @@ jest.mock('components/TextFieldMask', () => (props: any) => <input {...props} />
 
 const renderComponent = () =>
   render(<OrderForm />, {
-    wrapper: ({ children }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    wrapper: ({ children }) => (
+      <OrderContext.Provider value={[]}>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </OrderContext.Provider>
+    )
   });
 
 describe('OrderForm component', () => {

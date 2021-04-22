@@ -9,6 +9,9 @@ import List from './List';
 // Services
 import http from 'services/http';
 
+// Context
+import OrderContext from 'contexts/OrderContext';
+
 // Third party
 import MockAdapter from 'axios-mock-adapter';
 
@@ -38,7 +41,11 @@ const axiosMock = new MockAdapter(http);
 
 const renderComponent = () =>
   render(<List />, {
-    wrapper: ({ children }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    wrapper: ({ children }) => (
+      <OrderContext.Provider value={[]}>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </OrderContext.Provider>
+    )
   });
 
 describe('List component', () => {

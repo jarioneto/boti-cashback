@@ -10,6 +10,9 @@ import Cashback from 'components/Cashback';
 import Header from 'components/Header';
 import OrderForm from 'components/OrderForm';
 
+// Context
+import OrderContext from 'contexts/OrderContext';
+
 // Styles
 import useStyles from './styles';
 
@@ -17,7 +20,7 @@ const Orders: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <>
+    <OrderContext.Provider value={[]}>
       <Header />
       <div className={classes.container}>
         <Box className={classes.header}>
@@ -33,7 +36,7 @@ const Orders: React.FC = () => {
         <List />
       </div>
       <OrderForm />
-    </>
+    </OrderContext.Provider>
   );
 };
 

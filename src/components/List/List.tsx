@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 // Material UI
 import Alert from '@material-ui/lab/Alert';
@@ -13,8 +13,8 @@ import InfiniteScroll from 'react-infinite-scroller';
 // Services
 import { fetchOrders } from 'services/api';
 
-// Types
-import { Order } from 'types';
+// Context
+import OrderContext from 'contexts/OrderContext';
 
 // Utils
 import { getAuth } from 'utils/authentication';
@@ -27,8 +27,9 @@ const List: React.FC = () => {
 
   const limit = 6;
 
-  const [orders, setOrders] = useState<Order[]>([]);
   const [hasMoreOrders, setHasMoreOrders] = useState<boolean>(true);
+
+  const { orders, addOrders } = useContext(OrderContext.Context);
 
   const getOrders = (page: number) => {
     if (!hasMoreOrders) {
@@ -51,7 +52,7 @@ const List: React.FC = () => {
         setHasMoreOrders(false);
       }
 
-      setOrders((currentOrders) => [...currentOrders, ...newOrders]);
+      addOrders(newOrders);
     });
   };
 
